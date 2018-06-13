@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>article</title>
+</head>
+<style>
+    body{
+           margin-left: 40%;
+    }
+</style>
+<body>
+    <form action="{% url 'blog:add_action' %}" method="post">
+        {% csrf_token %}
+            <!-- 过滤器 default 默认值 -->
+            <input hidden name="article_id" value="{{ article.id | default:'0'}}">
+            <b>标题</b> ： <input type="text" name='title' value="{{ article.title }}"/> <br/>
+            <b>内容</b> ： <input type="text" name='content' value="{{ article.name }}" /><br/><br/>
+        <input type="submit" value="提交">
+     </form>
+</body>
+</html>

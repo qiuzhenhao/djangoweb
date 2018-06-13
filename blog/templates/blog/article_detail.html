@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>article_detail</title>
+</head>
+<style>
+    body{
+        margin-left: 40%;
+    }
+</style>
+<body>
+    <h>{{ aritcle.title }}</h>
+    <br>
+    <p>{{ aritcle.name }}</p>
+    <br>
+    <a href="{% url 'blog:index' %}">返回首页</a>
+    <br>
+    <a href="{% url 'blog:edit' aritcle.id %}">编辑</a>
+</body>
+</html>

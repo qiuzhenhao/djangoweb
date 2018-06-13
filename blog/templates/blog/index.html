@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+           margin-left: 40%;
+    }
+</style>
+<body>
+<a href="{% url 'blog:add'%}" >新文章</a><br/><br/>
+{% for aritcle in aritcles %}
+    <a href="{% url 'blog:article' aritcle.id %}">{{aritcle.title}}</a><br/>
+{% endfor %}
+<br/>
+
+</body>
+</html>
